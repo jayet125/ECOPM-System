@@ -1,0 +1,33 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/gyhlw_user?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: userservice
+  main:
+    allow-circular-references: true
+jpa:
+  hibernate:
+    ddl-auto: update
+  show-sql: true
+
+eureka:
+  client:
+    service-url:  # eureka的地址信息
+      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
+pattern:
+  name: 本地环境local
+spring.cloud.nacos.discovery:
+  server-addr: 127.0.0.1:8848
+  timeout: 5000
+  username: nacos
+  password: nacos
+  management:
+  health:
+    nacos-discovery:
+      enabled: false
+
