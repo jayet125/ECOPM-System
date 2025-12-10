@@ -1,13 +1,13 @@
 server:
-  port: 8081
+  port: 8082
 
 spring:
   application:
-    name: user-service
+    name: product-service
 
   # MySQL数据库配置
   datasource:
-    url: jdbc:mysql://localhost:3306/gyhlw_user?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/gyhlw_product?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -27,16 +27,16 @@ spring:
         jdbc:
           time_zone: Asia/Shanghai
     open-in-view: false  # 避免警告
-    # Nacos服务发现配置
-    cloud:
-      nacos:
-        discovery:
-          server-addr: localhost:8848
-          namespace: public
-          group: DEFAULT_GROUP
-          cluster-name: DEFAULT
-          service: user-service
-          enabled: true
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: public
+        group: DEFAULT_GROUP
+        cluster-name: DEFAULT
+        service: product-service
+        enabled: true
 
 
 # 日志配置（显示详细错误）
@@ -53,4 +53,4 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
   file:
-    name: logs/user-service.log
+    name: logs/product-service.log

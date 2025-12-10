@@ -1,0 +1,225 @@
+2025-12-10 08:25:05.724  INFO 8188 --- [restartedMain] edu.ecopm.ProductApplication             : Starting ProductApplication using Java 17.0.12 on LAPTOP-4SPRK4PM with PID 8188 (D:\project\ECOPM-System\Product-service\target\classes started by jayet in D:\project\ECOPM-System)
+2025-12-10 08:25:05.727  INFO 8188 --- [restartedMain] edu.ecopm.ProductApplication             : No active profile set, falling back to 1 default profile: "default"
+2025-12-10 08:25:05.756  INFO 8188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-10 08:25:05.757  INFO 8188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-10 08:25:06.039  INFO 8188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10 08:25:06.065  INFO 8188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 1 JPA repository interfaces.
+2025-12-10 08:25:06.363  INFO 8188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2025-12-10 08:25:06.371  INFO 8188 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-10 08:25:06.371  INFO 8188 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2025-12-10 08:25:06.417  INFO 8188 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-10 08:25:06.418  INFO 8188 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 661 ms
+2025-12-10 08:25:06.504 DEBUG 8188 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2025-12-10 08:25:06.513  INFO 8188 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-10 08:25:06.546  INFO 8188 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2025-12-10 08:25:06.636  INFO 8188 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-12-10 08:25:06.688  INFO 8188 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-10 08:25:06.785  INFO 8188 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-10 08:25:06.792  INFO 8188 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-12-10 08:25:07.079  INFO 8188 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-12-10 08:25:07.084  INFO 8188 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 08:25:07.130 DEBUG 8188 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:25:07.150 DEBUG 8188 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:25:07.177 DEBUG 8188 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:25:07.210 DEBUG 8188 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:25:07.233 DEBUG 8188 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:25:07.299 DEBUG 8188 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-10 08:25:07.328 DEBUG 8188 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-12-10 08:25:07.343 DEBUG 8188 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-10 08:25:07.349 DEBUG 8188 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-10 08:25:07.387  WARN 8188 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-12-10 08:25:07.405  INFO 8188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2025-12-10 08:25:07.409  INFO 8188 --- [restartedMain] edu.ecopm.ProductApplication             : Started ProductApplication in 1.887 seconds (JVM running for 2.22)
+2025-12-10 08:25:26.567  INFO 8188 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-10 08:25:26.567  INFO 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-10 08:25:26.567 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-12-10 08:25:26.567 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-12-10 08:25:26.567 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-12-10 08:25:26.567 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@63107af
+2025-12-10 08:25:26.567 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@34d8e921
+2025-12-10 08:25:26.567 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-10 08:25:26.567  INFO 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-10 08:25:26.573 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/product", parameters={}
+2025-12-10 08:25:26.575 DEBUG 8188 --- [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to edu.ecopm.controller.PController#getAllProducts()
+2025-12-10 08:25:26.581 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2025-12-10 08:25:26.582 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(482147825<open>)] for JPA transaction
+2025-12-10 08:25:26.585 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@6e0aa8cc]
+2025-12-10 08:25:26.652 DEBUG 8188 --- [http-nio-8082-exec-1] org.hibernate.SQL                        : 
+    select
+        product0_.id as id1_0_,
+        product0_.category as category2_0_,
+        product0_.description as descript3_0_,
+        product0_.name as name4_0_,
+        product0_.price as price5_0_,
+        product0_.stock as stock6_0_ 
+    from
+        products product0_
+2025-12-10 08:25:26.670 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
+2025-12-10 08:25:26.670 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(482147825<open>)]
+2025-12-10 08:25:26.671 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(482147825<open>)] after transaction
+2025-12-10 08:25:26.677 DEBUG 8188 --- [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-12-10 08:25:26.677 DEBUG 8188 --- [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[]]
+2025-12-10 08:25:26.691 DEBUG 8188 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-10 08:25:26.738 DEBUG 8188 --- [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2025-12-10 08:25:26.740 DEBUG 8188 --- [http-nio-8082-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-12-10 08:25:26.741 DEBUG 8188 --- [http-nio-8082-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-12-10 08:25:26.741 DEBUG 8188 --- [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2025-12-10 08:25:26.743 DEBUG 8188 --- [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2025-12-10 08:25:26.745 DEBUG 8188 --- [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-12-10 08:25:26.752 DEBUG 8188 --- [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-12-10 08:25:26.752 DEBUG 8188 --- [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Wed Dec 10 08:25:26 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-12-10 08:25:26.781 DEBUG 8188 --- [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2025-12-10 08:40:08.620  INFO 8188 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 08:40:08.622  INFO 8188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-10 08:40:08.626  INFO 8188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-10 08:41:31.221  INFO 24640 --- [restartedMain] edu.ecopm.ProductApplication             : Starting ProductApplication using Java 17.0.12 on LAPTOP-4SPRK4PM with PID 24640 (D:\project\ECOPM-System\Product-service\target\classes started by jayet in D:\project\ECOPM-System)
+2025-12-10 08:41:31.222  INFO 24640 --- [restartedMain] edu.ecopm.ProductApplication             : No active profile set, falling back to 1 default profile: "default"
+2025-12-10 08:41:31.243  INFO 24640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-10 08:41:31.243  INFO 24640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-10 08:41:31.489  INFO 24640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10 08:41:31.511  INFO 24640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+2025-12-10 08:41:31.756  INFO 24640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2025-12-10 08:41:31.761  INFO 24640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-10 08:41:31.761  INFO 24640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2025-12-10 08:41:31.795  INFO 24640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-10 08:41:31.795  INFO 24640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 551 ms
+2025-12-10 08:41:31.867 DEBUG 24640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2025-12-10 08:41:31.875  INFO 24640 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-10 08:41:31.894  INFO 24640 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2025-12-10 08:41:31.968  INFO 24640 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-12-10 08:41:32.013  INFO 24640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-10 08:41:32.091  INFO 24640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-10 08:41:32.098  INFO 24640 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-12-10 08:41:32.338  INFO 24640 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-12-10 08:41:32.341  INFO 24640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 08:41:32.383 DEBUG 24640 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:41:32.410 DEBUG 24640 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:41:32.436 DEBUG 24640 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:41:32.465 DEBUG 24640 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:41:32.485 DEBUG 24640 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 08:41:32.550 DEBUG 24640 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-10 08:41:32.583 DEBUG 24640 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-12-10 08:41:32.598 DEBUG 24640 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-10 08:41:32.602 DEBUG 24640 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-10 08:41:32.643  WARN 24640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-12-10 08:41:32.661  INFO 24640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2025-12-10 08:41:32.666  INFO 24640 --- [restartedMain] edu.ecopm.ProductApplication             : Started ProductApplication in 1.625 seconds (JVM running for 1.923)
+2025-12-10 08:46:56.848  INFO 24640 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 08:46:56.850  INFO 24640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-10 08:46:56.855  INFO 24640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-10 10:16:52.485  INFO 19220 --- [restartedMain] edu.ecopm.ProductApplication             : Starting ProductApplication using Java 17.0.12 on LAPTOP-4SPRK4PM with PID 19220 (D:\project\ECOPM-System\Product-service\target\classes started by jayet in D:\project\ECOPM-System)
+2025-12-10 10:16:52.486  INFO 19220 --- [restartedMain] edu.ecopm.ProductApplication             : No active profile set, falling back to 1 default profile: "default"
+2025-12-10 10:16:52.510  INFO 19220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-10 10:16:52.510  INFO 19220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-10 10:16:52.796  INFO 19220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10 10:16:52.821  INFO 19220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interfaces.
+2025-12-10 10:16:53.125  INFO 19220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2025-12-10 10:16:53.130  INFO 19220 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-10 10:16:53.130  INFO 19220 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2025-12-10 10:16:53.169  INFO 19220 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-10 10:16:53.170  INFO 19220 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 660 ms
+2025-12-10 10:16:53.244 DEBUG 19220 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:16:53.252  INFO 19220 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-10 10:16:53.273  INFO 19220 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2025-12-10 10:16:53.349  INFO 19220 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-12-10 10:16:53.401  INFO 19220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-10 10:16:53.484  INFO 19220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-10 10:16:53.492  INFO 19220 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-12-10 10:16:53.753  INFO 19220 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-12-10 10:16:53.757  INFO 19220 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:16:53.801 DEBUG 19220 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:16:53.821 DEBUG 19220 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:16:53.846 DEBUG 19220 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:16:53.872 DEBUG 19220 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:16:53.892 DEBUG 19220 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:16:53.957 DEBUG 19220 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-10 10:16:53.988 DEBUG 19220 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-12-10 10:16:54.003 DEBUG 19220 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-10 10:16:54.007 DEBUG 19220 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-10 10:16:54.058  WARN 19220 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-12-10 10:16:54.080  INFO 19220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2025-12-10 10:16:54.087  INFO 19220 --- [restartedMain] edu.ecopm.ProductApplication             : Started ProductApplication in 1.833 seconds (JVM running for 2.161)
+2025-12-10 10:19:21.988  INFO 19220 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:19:21.990  INFO 19220 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-10 10:19:21.993  INFO 19220 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-10 10:20:02.342  INFO 29860 --- [restartedMain] edu.ecopm.ProductApplication             : Starting ProductApplication using Java 17.0.12 on LAPTOP-4SPRK4PM with PID 29860 (D:\project\ECOPM-System\Product-service\target\classes started by jayet in D:\project\ECOPM-System)
+2025-12-10 10:20:02.344  INFO 29860 --- [restartedMain] edu.ecopm.ProductApplication             : No active profile set, falling back to 1 default profile: "default"
+2025-12-10 10:20:02.367  INFO 29860 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-10 10:20:02.367  INFO 29860 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-10 10:20:02.631  INFO 29860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10 10:20:02.654  INFO 29860 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interfaces.
+2025-12-10 10:20:02.946  INFO 29860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2025-12-10 10:20:02.951  INFO 29860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-10 10:20:02.951  INFO 29860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2025-12-10 10:20:02.990  INFO 29860 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-10 10:20:02.990  INFO 29860 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 621 ms
+2025-12-10 10:20:03.075 DEBUG 29860 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:20:03.084  INFO 29860 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-10 10:20:03.105  INFO 29860 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2025-12-10 10:20:03.182  INFO 29860 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-12-10 10:20:03.227  INFO 29860 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-10 10:20:03.306  INFO 29860 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-10 10:20:03.314  INFO 29860 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-12-10 10:20:03.608  INFO 29860 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-12-10 10:20:03.612  INFO 29860 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:20:03.660 DEBUG 29860 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:20:03.684 DEBUG 29860 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:20:03.710 DEBUG 29860 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:20:03.738 DEBUG 29860 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:20:03.758 DEBUG 29860 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:20:03.836 DEBUG 29860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-10 10:20:03.881 DEBUG 29860 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-12-10 10:20:03.901 DEBUG 29860 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-10 10:20:03.906 DEBUG 29860 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-10 10:20:03.952  WARN 29860 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-12-10 10:20:03.971  INFO 29860 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2025-12-10 10:20:03.978  INFO 29860 --- [restartedMain] edu.ecopm.ProductApplication             : Started ProductApplication in 1.837 seconds (JVM running for 2.175)
+2025-12-10 10:20:27.535  INFO 29860 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:20:27.538  INFO 29860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-10 10:20:27.541  INFO 29860 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-10 10:25:25.315  INFO 2516 --- [restartedMain] c.a.n.client.env.SearchableProperties    : properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-12-10 10:25:25.380  INFO 2516 --- [restartedMain] edu.ecopm.ProductApplication             : Starting ProductApplication using Java 17.0.12 on LAPTOP-4SPRK4PM with PID 2516 (D:\project\ECOPM-System\Product-service\target\classes started by jayet in D:\project\ECOPM-System)
+2025-12-10 10:25:25.380  INFO 2516 --- [restartedMain] edu.ecopm.ProductApplication             : No active profile set, falling back to 1 default profile: "default"
+2025-12-10 10:25:25.402  INFO 2516 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-10 10:25:25.402  INFO 2516 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-10 10:25:25.729  INFO 2516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10 10:25:25.762  INFO 2516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interfaces.
+2025-12-10 10:25:25.842  INFO 2516 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=93960470-81f6-3882-9059-de81437849c3
+2025-12-10 10:25:26.058  INFO 2516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2025-12-10 10:25:26.062  INFO 2516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-10 10:25:26.063  INFO 2516 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2025-12-10 10:25:26.101  INFO 2516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-10 10:25:26.102  INFO 2516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 700 ms
+2025-12-10 10:25:26.178 DEBUG 2516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:25:26.187  INFO 2516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-10 10:25:26.209  INFO 2516 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2025-12-10 10:25:26.283  INFO 2516 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-12-10 10:25:26.330  INFO 2516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-10 10:25:26.411  INFO 2516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-10 10:25:26.418  INFO 2516 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-12-10 10:25:26.740  INFO 2516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-12-10 10:25:26.749  INFO 2516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:25:26.805 DEBUG 2516 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:25:26.832 DEBUG 2516 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:25:26.860 DEBUG 2516 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:25:26.891 DEBUG 2516 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:25:26.915 DEBUG 2516 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-12-10 10:25:26.995 DEBUG 2516 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-10 10:25:27.037 DEBUG 2516 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2025-12-10 10:25:27.053 DEBUG 2516 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-10 10:25:27.059 DEBUG 2516 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-10 10:25:27.280  WARN 2516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-12-10 10:25:27.401  INFO 2516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2025-12-10 10:25:27.426  INFO 2516 --- [restartedMain] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-12-10 10:25:27.426  INFO 2516 --- [restartedMain] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-12-10 10:25:27.954  INFO 2516 --- [restartedMain] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP product-service 10.20.206.234:8082 register finished
+2025-12-10 10:25:28.047  INFO 2516 --- [restartedMain] edu.ecopm.ProductApplication             : Started ProductApplication in 2.996 seconds (JVM running for 3.345)
+2025-12-10 10:29:25.954  WARN 2516 --- [Thread-11] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-12-10 10:29:25.954  WARN 2516 --- [Thread-8] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-12-10 10:29:25.954  WARN 2516 --- [Thread-8] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-12-10 10:29:25.954  WARN 2516 --- [Thread-11] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2025-12-10 10:29:25.969  INFO 2516 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2025-12-10 10:29:25.979  INFO 2516 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2025-12-10 10:29:25.983  INFO 2516 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10 10:29:25.985  INFO 2516 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-10 10:29:25.988  INFO 2516 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

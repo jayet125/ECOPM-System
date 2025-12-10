@@ -1,0 +1,27 @@
+package edu.ecopm;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+@SpringBootApplication
+@EnableFeignClients
+public class OrderApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(OrderApplication.class, args);
+        System.out.println("\n" +
+                "╔══════════════════════════════════════════╗\n" +
+                "║     🚀 订单服务启动成功！                    ║\n" +
+                "║                                          ║\n" +
+                "║  端口: 8083                               ║\n" +
+                "║  服务名: order-service                     ║\n" +
+                "║                                           ║\n" +
+                "║  测试接口:                                 ║\n" +
+                "║  http://localhost:8083/orders/test       ║\n" +
+                "║  http://localhost:8083/orders            ║\n" +
+                "╚══════════════════════════════════════════╝\n");
+    }
+
+}
