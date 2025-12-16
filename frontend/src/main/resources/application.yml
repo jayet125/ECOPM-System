@@ -1,0 +1,54 @@
+# frontend/src/main/resources/application.yml
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: frontend-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecopm_user?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
+
+  # 静态资源配置
+  mvc:
+    static-path-pattern: /**
+  web:
+    resources:
+      static-locations: classpath:/static/
+      cache:
+        period: 3600  # 缓存时间（秒）
+
+  # 开发工具配置
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+# 日志配置
+logging:
+  level:
+    edu.ecopm.frontend: INFO
+    org.springframework: INFO
+    org.springframework.web: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/frontend-service.log
+
+# 自定义配置
+app:
+  name: "ECOPM电商平台"
+  version: "1.0.0"
+  description: "工业互联网微平台架构实训项目"
+  backend:
+    user-service: "http://localhost:8081"
+    product-service: "http://localhost:8082"
+    order-service: "http://localhost:8083"

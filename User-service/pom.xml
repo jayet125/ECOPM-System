@@ -49,7 +49,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>edu.ecopm.user.UserApplication</mainClass>
+                    <mainClass>edu.ecopm.UserApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

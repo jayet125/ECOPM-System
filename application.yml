@@ -1,0 +1,17 @@
+# 公共配置
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: public
+        group: DEFAULT_GROUP
+        cluster-name: DEFAULT
+        enabled: true
+
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    edu.ecopm: DEBUG

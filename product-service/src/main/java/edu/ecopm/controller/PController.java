@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
 public class PController {
    private final PService pService;
 
@@ -51,12 +51,7 @@ public class PController {
        return pService.getProductsByCategory(category);
     }
 
-    @PostMapping("/add-test")
-    public String addTestProduct(){
-       Product product = new Product("测试商品", "这是一个测试商品",99.99,100,"电子产品");
-       pService.addProduct(product);
-       return "添加成功";
-    }
+
 
 
 }

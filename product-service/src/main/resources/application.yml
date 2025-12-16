@@ -1,56 +1,24 @@
 server:
   port: 8082
+  servlet:
+    context-path: /
 
 spring:
   application:
     name: product-service
 
-  # MySQL数据库配置
+  # 数据库配置
   datasource:
-    url: jdbc:mysql://localhost:3306/gyhlw_product?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/ecopm_product?useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      connection-timeout: 30000
-      maximum-pool-size: 10
 
-  # JPA配置（针对MySQL）
+  # JPA配置
   jpa:
     hibernate:
-      ddl-auto: update  # 开发环境用update，生产环境用validate或none
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
-        format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
-        jdbc:
-          time_zone: Asia/Shanghai
-    open-in-view: false  # 避免警告
-
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-        namespace: public
-        group: DEFAULT_GROUP
-        cluster-name: DEFAULT
-        service: product-service
-        enabled: true
-
-
-# 日志配置（显示详细错误）
-logging:
-  level:
-    root: INFO
-    org.springframework: INFO
-    org.hibernate: INFO
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql: TRACE
-    edu.ecopm.order: DEBUG
-    org.springframework.web: DEBUG
-    org.springframework.orm.jpa: DEBUG
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
-  file:
-    name: logs/product-service.log

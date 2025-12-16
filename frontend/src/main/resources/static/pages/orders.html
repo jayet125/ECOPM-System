@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的订单 - ECOPM商城</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 订单页面专用样式 */
+        .orders-container {
+            min-height: 70vh;
+            padding: 30px 0;
+        }
+
+        .orders-header {
+            background: linear-gradient(135deg, #FF9800, #FFC107);
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .orders-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .orders-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .orders-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .orders-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: #FFF8E1;
+            border: none;
+            border-radius: 25px;
+            color: #FF9800;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: #FF9800;
+            color: white;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(255, 152, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .order-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.15);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #FFF8E1;
+        }
+
+        .order-info h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .order-info p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .order-status {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background: #FFF8E1;
+            color: #FF9800;
+        }
+
+        .status-paid {
+            background: #E8F5E9;
+            color: #4CAF50;
+        }
+
+        .status-shipped {
+            background: #E3F2FD;
+            color: #2196F3;
+        }
+
+        .status-completed {
+            background: #F3E5F5;
+            color: #9C27B0;
+        }
+
+        .order-items {
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #FFF8E1;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-right: 15px;
+            background: #FFF8E1;
+        }
+
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-info h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .item-info p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #FF9800;
+        }
+
+        .order-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 2px solid #FFF8E1;
+        }
+
+        .order-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FF9800;
+        }
+
+        .order-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .empty-orders {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 152, 0, 0.1);
+        }
+
+        .empty-orders i {
+            font-size: 100px;
+            color: #FFE0B2;
+            margin-bottom: 30px;
+        }
+
+        .empty-orders h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .empty-orders p {
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        .loading-orders {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .loading-orders i {
+            font-size: 50px;
+            color: #FF9800;
+            margin-bottom: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .order-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .order-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .order-actions {
+                width: 100%;
+            }
+
+            .order-actions .btn {
+                flex: 1;
+            }
+
+            .orders-tabs {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-shopping-bag"></i>
+                ECOPM商城
+            </a>
+        </div>
+        <div class="nav-menu">
+            <a href="../index.html"><i class="fas fa-home"></i> 首页</a>
+            <a href="products.html"><i class="fas fa-store"></i> 商品</a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i> 购物车 <span class="cart-count">0</span></a>
+            <a href="orders.html" class="active"><i class="fas fa-clipboard-list"></i> 订单</a>
+            <div class="user-info" id="user-info">
+                <span id="user-greeting"></span>
+                <a href="#" onclick="auth.logout()" id="logout-btn"><i class="fas fa-sign-out-alt"></i> 退出</a>
+            </div>
+            <a href="login.html" id="login-btn"><i class="fas fa-user"></i> 登录</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 订单页面 -->
+<div class="orders-header">
+    <div class="container">
+        <h1><i class="fas fa-clipboard-list"></i> 我的订单</h1>
+        <p>查看您的购买历史和订单状态</p>
+    </div>
+</div>
+
+<div class="container orders-container">
+    <div class="orders-content">
+        <div class="orders-tabs">
+            <button class="tab-btn active" data-status="all" onclick="filterOrders('all')">全部订单</button>
+            <button class="tab-btn" data-status="0" onclick="filterOrders('0')">待支付</button>
+            <button class="tab-btn" data-status="1" onclick="filterOrders('1')">待发货</button>
+            <button class="tab-btn" data-status="2" onclick="filterOrders('2')">已发货</button>
+            <button class="tab-btn" data-status="3" onclick="filterOrders('3')">已完成</button>
+        </div>
+
+        <div id="orders-list">
+            <!-- 订单列表通过JS动态加载 -->
+            <div class="loading-orders">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>正在加载订单数据...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 脚注 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 ECOPM商城 - 工业互联网微平台架构实训项目</p>
+        <p>用心服务每一位顾客</p>
+    </div>
+</footer>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/cart.js"></script>
+<script>
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        auth.showLoginStatus();
+        cart.updateCartCount();
+        loadOrders();
+    });
+
+    let allOrders = [];
+    let currentFilter = 'all';
+
+    async function loadOrders() {
+        const ordersList = document.getElementById('orders-list');
+
+        if (!auth.isLoggedIn()) {
+            ordersList.innerHTML = `
+                    <div class="empty-orders">
+                        <i class="fas fa-user-lock"></i>
+                        <h3>请先登录</h3>
+                        <p>登录后查看您的订单</p>
+                        <a href="login.html" class="btn btn-primary">立即登录</a>
+                    </div>
+                `;
+            return;
+        }
+
+        try {
+            // 这里应该调用实际的订单API
+            // const orders = await api.order.getByUserId(auth.currentUser.id);
+
+            // 由于API可能还未完善，先使用模拟数据
+            const mockOrders = getMockOrders();
+            allOrders = mockOrders;
+
+            renderOrders();
+        } catch (error) {
+            console.error('加载订单失败:', error);
+            ordersList.innerHTML = `
+                    <div class="empty-orders">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>加载失败</h3>
+                        <p>${error.message}</p>
+                        <button class="btn btn-primary" onclick="loadOrders()">重试</button>
+                    </div>
+                `;
+        }
+    }
+
+    function filterOrders(status) {
+        currentFilter = status;
+
+        // 更新选项卡状态
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.status === status) {
+                btn.classList.add('active');
+            }
+        });
+
+        renderOrders();
+    }
+
+    function renderOrders() {
+        const ordersList = document.getElementById('orders-list');
+
+        // 筛选订单
+        let filteredOrders = allOrders;
+        if (currentFilter !== 'all') {
+            filteredOrders = allOrders.filter(order => order.status == currentFilter);
+        }
+
+        if (filteredOrders.length === 0) {
+            ordersList.innerHTML = `
+                    <div class="empty-orders">
+                        <i class="fas fa-box-open"></i>
+                        <h3>暂无订单</h3>
+                        <p>${currentFilter === 'all' ? '您还没有任何订单' : '没有符合筛选条件的订单'}</p>
+                        <a href="products.html" class="btn btn-primary">去购物</a>
+                    </div>
+                `;
+            return;
+        }
+
+        let html = '';
+
+        filteredOrders.forEach(order => {
+            // 状态文字和样式
+            let statusText = '';
+            let statusClass = '';
+
+            switch(order.status) {
+                case 0:
+                    statusText = '待支付';
+                    statusClass = 'status-pending';
+                    break;
+                case 1:
+                    statusText = '待发货';
+                    statusClass = 'status-pending';
+                    break;
+                case 2:
+                    statusText = '已发货';
+                    statusClass = 'status-shipped';
+                    break;
+                case 3:
+                    statusText = '已完成';
+                    statusClass = 'status-completed';
+                    break;
+                default:
+                    statusText = '未知状态';
+                    statusClass = 'status-pending';
+            }
+
+            // 订单项目
+            let itemsHtml = '';
+            order.items.forEach(item => {
+                itemsHtml += `
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="${item.image || 'https://via.placeholder.com/70?text=商品'}"
+                                     alt="${item.name}">
+                            </div>
+                            <div class="item-info">
+                                <h4>${item.name}</h4>
+                                <p>${item.category || '未分类'}</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <p>¥${item.price} × ${item.quantity}</p>
+                                <p class="item-price">¥${(item.price * item.quantity).toFixed(2)}</p>
+                            </div>
+                        </div>
+                    `;
+            });
+
+            html += `
+                    <div class="order-card">
+                        <div class="order-header">
+                            <div class="order-info">
+                                <h3>订单号: ${order.orderNo}</h3>
+                                <p><i class="far fa-clock"></i> ${order.createTime}</p>
+                            </div>
+                            <div class="order-status ${statusClass}">
+                                ${statusText}
+                            </div>
+                        </div>
+
+                        <div class="order-items">
+                            ${itemsHtml}
+                        </div>
+
+                        <div class="order-footer">
+                            <div class="order-total">
+                                合计: ¥${order.totalAmount}
+                            </div>
+                            <div class="order-actions">
+                                ${order.status == 0 ?
+                `<button class="btn btn-primary btn-small" onclick="payOrder('${order.orderNo}')">
+                                        <i class="fas fa-credit-card"></i> 去支付
+                                    </button>` : ''}
+                                ${order.status == 2 ?
+                `<button class="btn btn-secondary btn-small" onclick="confirmReceipt('${order.orderNo}')">
+                                        <i class="fas fa-check"></i> 确认收货
+                                    </button>` : ''}
+                                <button class="btn btn-secondary btn-small" onclick="viewOrderDetail('${order.orderNo}')">
+                                    <i class="fas fa-eye"></i> 详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        });
+
+        ordersList.innerHTML = html;
+    }
+
+    // 模拟订单数据
+    function getMockOrders() {
+        return [
+            {
+                orderNo: 'ORD20250001',
+                createTime: '2025-01-15 14:30:22',
+                status: 3, // 已完成
+                totalAmount: 6999.00,
+                items: [
+                    { name: 'iPhone 14', category: '电子产品', price: 6999.00, quantity: 1,
+                        image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=70&h=70&fit=crop' }
+                ]
+            },
+            {
+                orderNo: 'ORD20250002',
+                createTime: '2025-01-16 09:15:10',
+                status: 2, // 已发货
+                totalAmount: 599.00,
+                items: [
+                    { name: '耐克运动鞋', category: '服装', price: 599.00, quantity: 1,
+                        image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=70&h=70&fit=crop' }
+                ]
+            },
+            {
+                orderNo: 'ORD20250003',
+                createTime: '2025-01-17 16:45:30',
+                status: 0, // 待支付
+                totalAmount: 2999.00,
+                items: [
+                    { name: '小米电视', category: '电子产品', price: 2999.00, quantity: 1,
+                        image: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=70&h=70&fit=crop' }
+                ]
+            }
+        ];
+    }
+
+    // 订单操作函数
+    function payOrder(orderNo) {
+        if (confirm(`确定要支付订单 ${orderNo} 吗？`)) {
+            // 这里应该调用支付API
+            alert('支付功能正在开发中...');
+            loadOrders(); // 重新加载订单
+        }
+    }
+
+    function confirmReceipt(orderNo) {
+        if (confirm(`确定要确认收货吗？订单 ${orderNo} 将标记为已完成。`)) {
+            // 这里应该调用确认收货API
+            alert('确认收货成功！');
+            loadOrders(); // 重新加载订单
+        }
+    }
+
+    function viewOrderDetail(orderNo) {
+        alert(`订单 ${orderNo} 的详细信息正在开发中...`);
+        // 未来可以跳转到订单详情页面
+    }
+</script>
+</body>
+</html>

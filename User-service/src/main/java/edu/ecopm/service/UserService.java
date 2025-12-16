@@ -12,19 +12,32 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    private UserRepository userrepository;
+    private UserRepository userRepository;
 
 
     public void register(User user) {
-        if (userrepository.findByUsername(user.getUsername()) != null) {
-            throw new RuntimeException("用户已存在");
+        if (userRepository.findByUsername(user.getUsername()) != null) {
+            throw new RuntimeException("用户名已存在");
         }
-        userrepository.save(user);
+
+        // 检查邮箱是否已存在
+        if (userRepository.findByEmail(user.getEmail()) != null) {
+            throw new RuntimeException("邮箱已被注册");
+        }
+
+        // 检查手机号是否已存在
+        if (userRepository.findByPhone(user.getPhone()) != null) {
+            throw new RuntimeException("手机号已被注册");
+        }
+
+        // 保存用户信息
+        userRepository.save(user);
     }
 
 
+
     public boolean login(String username, String password) {
-        User user = userrepository.findByUsername(username);
+        User user = userRepository.findByUsername(username);
 
         if (user != null && user.getPassword().equals(password)) {
             return true;
@@ -33,11 +46,11 @@ public class UserService {
     }
 
     public List<User> getAllUser() {
-        return userrepository.findAll();
+        return userRepository.findAll();
     }
 
     public User getUserById(Integer id) {
-        return userrepository.findById(id).orElse(null);
+        return userRepository.findById(id).orElse(null);
     }
 
 

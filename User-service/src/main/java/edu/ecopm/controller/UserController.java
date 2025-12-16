@@ -12,17 +12,25 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    private final UserService userService;
-
-    // 使用构造函数注入，避免循环依赖
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    private UserService userService;
+
 
     @GetMapping("/test")
     public String test() {
         return "用户服务API测试成功！";
+    }
+
+    @GetMapping("/")
+    public String home() {
+        return "<h1>用户服务</h1>" +
+                "<p>可用接口：</p>" +
+                "<ul>" +
+                "<li><a href='/users/test'>/users/test - 测试接口</a></li>" +
+                "<li><a href='/users/ping'>/users/ping - 心跳检测</a></li>" +
+                "<li><a href='/users/info'>/users/info - 服务信息</a></li>" +
+                "<li><a href='/users/getUser'>/users/getUser - 获取所有用户</a></li>" +
+                "</ul>";
     }
 
     @GetMapping("/ping")

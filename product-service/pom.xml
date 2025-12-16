@@ -81,8 +81,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>edu.ecopm.productservice.ProductServiceApplication</mainClass>
-                    <skip>true</skip>
+                    <mainClass>edu.ecopm.ProductApplication</mainClass>
+                    <skip>false</skip>
                 </configuration>
                 <executions>
                     <execution>

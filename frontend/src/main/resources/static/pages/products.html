@@ -1,0 +1,162 @@
+<!-- pages/products.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表 - ECOPM电商平台</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <i class="fas fa-shopping-bag"></i>
+                ECOPM商城
+            </a>
+        </div>
+        <div class="nav-search">
+            <input type="text" id="search-input" placeholder="搜索商品...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-menu">
+            <a href="../index.html"><i class="fas fa-home"></i> 首页</a>
+            <a href="products.html" class="active"><i class="fas fa-store"></i> 商品</a>
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                购物车 <span class="cart-count">0</span>
+            </a>
+            <a href="orders.html"><i class="fas fa-clipboard-list"></i> 订单</a>
+            <div class="user-info" id="user-info">
+                <span id="user-greeting"></span>
+                <a href="#" onclick="auth.logout()" id="logout-btn"><i class="fas fa-sign-out-alt"></i> 退出</a>
+            </div>
+            <a href="login.html" id="login-btn"><i class="fas fa-user"></i> 登录</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 商品列表 -->
+<div class="container">
+    <div class="page-header">
+        <h1><i class="fas fa-box-open"></i> 商品列表</h1>
+        <div class="category-filter" id="category-filter">
+            <button class="btn-filter active" data-category="all">全部</button>
+            <button class="btn-filter" data-category="电子产品">电子产品</button>
+            <button class="btn-filter" data-category="服装">服装</button>
+            <button class="btn-filter" data-category="食品">食品</button>
+            <button class="btn-filter" data-category="书籍">书籍</button>
+        </div>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+        <!-- 商品卡片会通过JavaScript动态加载 -->
+        <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i> 加载中...
+        </div>
+    </div>
+</div>
+
+<!-- 商品详情模态框 -->
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-product-detail"></div>
+    </div>
+</div>
+
+<!-- 脚注 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 ECOPM电商平台 - 工业互联网微平台架构实训项目</p>
+        <p>用户服务: 8081 | 商品服务: 8082 | 订单服务: 8083</p>
+    </div>
+</footer>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/product.js"></script>
+<script>
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        auth.showLoginStatus();
+        cart.updateCartCount();
+        loadProducts();
+        setupEventListeners();
+    });
+
+    // 初始化ProductService
+    const productService = new ProductService();
+
+    // 加载商品
+    async function loadProducts() {
+        try {
+            const products = await api.product.getAll();
+            productService.products = products;
+            productService.renderProducts();
+        } catch (error) {
+            console.error('加载商品失败:', error);
+            const container = document.getElementById('products-grid');
+            container.innerHTML = `
+                <div class="error-message" style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+                    <i class="fas fa-exclamation-triangle fa-4x" style="color: #FFC107; margin-bottom: 20px;"></i>
+                    <h3 style="color: #666; margin-bottom: 10px;">加载商品失败</h3>
+                    <p style="color: #999;">请检查网络连接或稍后重试</p>
+                </div>
+            `;
+        }
+    }
+
+    // 设置事件监听器
+    function setupEventListeners() {
+        // 分类筛选
+        const filterButtons = document.querySelectorAll('.btn-filter');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.dataset.category;
+                
+                // 更新激活状态
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 筛选商品
+                productService.currentCategory = category === 'all' ? 'all' : category;
+                productService.renderProducts();
+            });
+        });
+
+        // 搜索功能
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+
+        searchBtn.addEventListener('click', () => {
+            const keyword = searchInput.value.trim();
+            // 实现搜索功能
+            console.log('搜索:', keyword);
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+    }
+
+    // 从详情页加入购物车
+    function addToCartFromDetail(productJson) {
+        const product = JSON.parse(productJson);
+        const quantity = parseInt(document.getElementById('detail-quantity').value);
+        product.quantity = quantity;
+        cart.addItem(product);
+        
+        // 关闭模态框
+        document.getElementById('product-modal').style.display = 'none';
+    }
+</script>
+</body>
+</html>

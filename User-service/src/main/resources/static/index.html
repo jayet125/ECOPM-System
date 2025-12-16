@@ -1,0 +1,66 @@
+<!-- 在 src/main/resources/static/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户服务管理</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #333; }
+        .api-list { background: #f5f5f5; padding: 20px; border-radius: 8px; }
+        .api-item { margin: 10px 0; }
+        .api-item a { color: #0066cc; text-decoration: none; }
+        .api-item a:hover { text-decoration: underline; }
+        .status { padding: 5px 10px; border-radius: 4px; }
+        .online { background: #d4edda; color: #155724; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🚀 用户服务管理面板</h1>
+    <div class="status online">服务状态：在线</div>
+
+    <h2>📊 服务信息</h2>
+    <p><strong>服务名称：</strong>user-service</p>
+    <p><strong>端口：</strong>8081</p>
+    <p><strong>数据库：</strong>gyhlw_user</p>
+
+    <h2>🔗 API 接口</h2>
+    <div class="api-list">
+        <div class="api-item">
+            <a href="/users/test" target="_blank">✅ /users/test</a> - 服务测试
+        </div>
+        <div class="api-item">
+            <a href="/users/ping" target="_blank">🔄 /users/ping</a> - 心跳检测
+        </div>
+        <div class="api-item">
+            <a href="/users/getUser" target="_blank">👥 /users/getUser</a> - 获取所有用户
+        </div>
+        <div class="api-item">
+            <a href="/users/register.html" target="_blank">📝 用户注册页面</a>
+        </div>
+    </div>
+
+    <h2>🛠️ 快速测试</h2>
+    <button onclick="testAPI()">测试API</button>
+    <div id="result" style="margin-top: 10px;"></div>
+</div>
+
+<script>
+    function testAPI() {
+        fetch('/users/test')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('result').innerHTML =
+                    '<p style="color: green;">✅ ' + data + '</p>';
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML =
+                    '<p style="color: red;">❌ 请求失败: ' + error + '</p>';
+            });
+    }
+</script>
+</body>
+</html>

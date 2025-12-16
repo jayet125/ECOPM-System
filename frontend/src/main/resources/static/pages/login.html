@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - ECOPM商城</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #FFE0B2 0%, #FFF8E1 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(255, 152, 0, 0.2);
+            overflow: hidden;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, #FF9800, #FFC107);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .login-header h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .login-body {
+            padding: 40px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #FFE0B2;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #FFF8E1;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #FF9800;
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+        }
+
+        .form-control.with-icon {
+            padding-left: 50px;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 42px;
+            color: #FF9800;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #FF9800, #FFC107);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #FFE0B2;
+        }
+
+        .login-footer a {
+            color: #FF9800;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .login-footer a:hover {
+            color: #F57C00;
+            text-decoration: underline;
+        }
+
+        .register-link {
+            display: block;
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #FF9800;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: #F44336;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 15px;
+            }
+
+            .login-card {
+                border-radius: 15px;
+            }
+
+            .login-header {
+                padding: 30px 20px;
+            }
+
+            .login-body {
+                padding: 30px 20px;
+            }
+        }
+
+        /* 装饰元素 */
+        .login-decorations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .decoration-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 193, 7, 0.1);
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -150px;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -100px;
+        }
+    </style>
+</head>
+<body>
+<!-- 装饰元素 -->
+<div class="login-decorations">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+</div>
+
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <h2><i class="fas fa-shopping-bag"></i> ECOPM商城</h2>
+            <p>欢迎回来，请登录您的账户</p>
+        </div>
+
+        <div class="login-body">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="username" class="form-control with-icon"
+                           placeholder="请输入用户名" required>
+                    <div class="error-message" id="username-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" class="form-control with-icon"
+                           placeholder="请输入密码" required>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-login" id="loginBtn">
+                        <i class="fas fa-sign-in-alt"></i> 登录
+                    </button>
+                </div>
+            </form>
+
+            <!-- 在登录页面的底部添加注册链接 -->
+            <div class="login-footer">
+                <p>还没有账户？<a href="register.html">立即注册</a></p>
+                <a href="../index.html" class="home-link">
+                    <i class="fas fa-home"></i> 返回首页
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const loginBtn = document.getElementById('loginBtn');
+
+        // 清除之前的错误信息
+        document.querySelectorAll('.error-message').forEach(el => {
+            el.style.display = 'none';
+            el.textContent = '';
+        });
+
+        // 验证输入
+        let hasError = false;
+
+        if (!username.trim()) {
+            document.getElementById('username-error').textContent = '请输入用户名';
+            document.getElementById('username-error').style.display = 'block';
+            hasError = true;
+        }
+
+        if (!password.trim()) {
+            document.getElementById('password-error').textContent = '请输入密码';
+            document.getElementById('password-error').style.display = 'block';
+            hasError = true;
+        }
+
+        if (hasError) return;
+
+        // 禁用按钮，显示加载状态
+        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 登录中...';
+        loginBtn.disabled = true;
+
+        try {
+            const result = await auth.login(username, password);
+
+            if (result.success) {
+                loginBtn.innerHTML = '<i class="fas fa-check"></i> 登录成功';
+                loginBtn.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
+
+                // 显示成功消息
+                setTimeout(() => {
+                    window.location.href = '../index.html';
+                }, 1000);
+            } else {
+                loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> 登录';
+                loginBtn.disabled = false;
+
+                document.getElementById('password-error').textContent = '用户名或密码错误';
+                document.getElementById('password-error').style.display = 'block';
+            }
+        } catch (error) {
+            console.error('登录失败:', error);
+            loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> 登录';
+            loginBtn.disabled = false;
+
+            document.getElementById('password-error').textContent = '登录失败，请检查网络连接';
+            document.getElementById('password-error').style.display = 'block';
+        }
+    });
+
+    // 输入时清除错误信息
+    document.getElementById('username').addEventListener('input', function() {
+        document.getElementById('username-error').style.display = 'none';
+    });
+
+    document.getElementById('password').addEventListener('input', function() {
+        document.getElementById('password-error').style.display = 'none';
+    });
+</script>
+</body>
+</html>

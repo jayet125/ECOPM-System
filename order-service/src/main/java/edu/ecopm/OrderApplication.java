@@ -4,6 +4,9 @@ package edu.ecopm;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -22,6 +25,21 @@ public class OrderApplication {
                 "║  http://localhost:8083/orders/test       ║\n" +
                 "║  http://localhost:8083/orders            ║\n" +
                 "╚══════════════════════════════════════════╝\n");
+    }// 在每个服务的启动类中添加以下方法
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:8080") // 前端运行的端口
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
+            }
+        };
     }
+
+
 
 }
