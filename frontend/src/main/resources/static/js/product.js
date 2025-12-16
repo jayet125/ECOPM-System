@@ -13,7 +13,7 @@ class ProductService {
         const defaultImage = '../images/default/product.jpg';
 
         // 尝试加载对应ID的图片
-        const imagePath = `${basePath}${productId}.jpg`;
+        const imagePath = `${basePath}${productId}.png`;
 
         // 返回图片路径（如果图片不存在，前端会显示默认图片）
         return imagePath;
